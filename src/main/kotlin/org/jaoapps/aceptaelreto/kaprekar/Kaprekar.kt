@@ -16,7 +16,7 @@ private fun executeKaprekarRoutine(number: String, iterations: Int = 0): Int {
     val descNumbers = ascNumbers.reversed()
     val result = (descNumbers.joinToString("").toInt() - ascNumbers.joinToString("").toInt()).toString()
 
-    if (! isKaprecarNumber(result)) {
+    if (!isKaprecarNumber(result)) {
         i = executeKaprekarRoutine(result, i)
     }
 
