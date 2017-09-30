@@ -1,22 +1,24 @@
 package org.jaoapps.aceptaelreto.kaprekar
 
+private val KAPREKAR_CONSTANT = "6174"
+
 fun kaprekarIterations(number: String): Int {
-    when (number) {
-        "6174" -> return 1
-        "1111", "2222", "3333", "4444", "5555", "6666", "7777", "8888" -> return 8
-        else -> return executeKaprekarRoutine(number)
+    return when (number) {
+        KAPREKAR_CONSTANT -> 0
+        "0000", "1111", "2222", "3333", "4444", "5555", "6666", "7777", "8888" -> 8
+        else -> executeKaprekarRoutine(number)
     }
 }
 
 private fun executeKaprekarRoutine(number: String, iterations: Int = 0): Int {
     val num = completeNumberWithCeros(number)
-    var i = increaseIterator(iterations)
+    var i = iterations + 1
 
     val ascNumbers = num.toList().sorted()
     val descNumbers = ascNumbers.reversed()
     val result = (descNumbers.joinToString("").toInt() - ascNumbers.joinToString("").toInt()).toString()
 
-    if (!isKaprecarNumber(result)) {
+    if (result != KAPREKAR_CONSTANT) {
         i = executeKaprekarRoutine(result, i)
     }
 
@@ -31,8 +33,3 @@ private fun completeNumberWithCeros(number: String): String {
     return numberComplete
 }
 
-private fun increaseIterator(i: Int): Int {
-    return i + 1
-}
-
-private fun isKaprecarNumber(result: String) = result == "6174"

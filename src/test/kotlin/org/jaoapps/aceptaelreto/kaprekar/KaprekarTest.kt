@@ -6,12 +6,13 @@ import org.junit.Test
 class KaprekarTest {
 
     @Test
-    fun is_kaprecar() {
-        assertEquals(kaprekarIterations("6174"), 1)
+    fun is_kaprekar() {
+        assertEquals(kaprekarIterations("6174"), 0)
     }
 
     @Test
     fun is_repdigit() {
+        assertEquals(8, kaprekarIterations("0000"))
         assertEquals(8, kaprekarIterations("1111"))
         assertEquals(8, kaprekarIterations("2222"))
         assertEquals(8, kaprekarIterations("3333"))
