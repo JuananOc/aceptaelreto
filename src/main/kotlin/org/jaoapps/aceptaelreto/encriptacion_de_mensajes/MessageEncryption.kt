@@ -73,9 +73,9 @@ class Dictionary(referencePosition: Char = 'p', encryptionKey: Char = 'p') {
 
     private fun isVowel(it: Int): Boolean {
         // a = 1 e = 5 i = 9 o = 15 u = 21
-        when (it) {
-            1, 5, 9, 15, 21 -> return true
-            else -> return false
+        return when (it) {
+            1, 5, 9, 15, 21 -> true
+            else -> false
         }
     }
 }

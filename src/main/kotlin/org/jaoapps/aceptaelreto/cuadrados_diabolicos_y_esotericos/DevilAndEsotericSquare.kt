@@ -31,11 +31,11 @@ class Square(val dimension: Int, celdas: String) {
 
     fun isDiabolic() = rowsAreEqualsToMagicConstant() && columsAreEqualsToMagicConstant() && diagonalsAreEqualsToMagicConstant()
 
-    private fun diagonalsAreEqualsToMagicConstant() = leftToRightDiagonalIsEqualsToMagicConstant() && rightToLeftIsEqualsToMagicConstant()
-
     private fun rowsAreEqualsToMagicConstant() = square.all { it.sum() == magicConstant }
 
     private fun columsAreEqualsToMagicConstant() = (0 until dimension).all { square[it].sum() == magicConstant }
+
+    private fun diagonalsAreEqualsToMagicConstant() = leftToRightDiagonalIsEqualsToMagicConstant() && rightToLeftIsEqualsToMagicConstant()
 
     private fun leftToRightDiagonalIsEqualsToMagicConstant() = (0 until dimension).sumBy { square[it][it] } == magicConstant
 
