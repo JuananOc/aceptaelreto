@@ -3,7 +3,7 @@ package org.jaoapps.aceptaelreto.mobiles
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class MovilesTest {
+class MobilesTest {
 
     @Test
     fun is_balanced() {
