@@ -50,7 +50,7 @@ private fun calculateHeight(maxGrade: Int, coefficients: List<Int>, base: Double
 //    val coefficients = coefficients.map { it.toDouble() }
 //    var height = coefficients.reduce { he, coefficient -> coefficient * pow(base, maxGrade - coefficients.indexOf(coefficient)) }
 
-    return limitByCainAndAbelArea(height)
+    return limitedByCainAndAbelArea(height)
 }
 
 private fun pow(base: Double, power: Int): Double {
@@ -62,7 +62,7 @@ private fun pow(base: Double, power: Int): Double {
     }
 }
 
-private fun limitByCainAndAbelArea(h: Double): Double {
+private fun limitedByCainAndAbelArea(h: Double): Double {
     var height = h
 
     if (height > 1.0) {
