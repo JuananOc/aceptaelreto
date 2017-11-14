@@ -14,7 +14,7 @@ fun isTheCastFair(grade: Int, coefficients: List<Int>, rectangles: Int): String 
     }
 }
 
-fun calcLandOwner(grade: Int, coefficients: List<Int>, rectangles: Int): String {
+private fun calcLandOwner(grade: Int, coefficients: List<Int>, rectangles: Int): String {
     val cain = calcCainArea(rectangles, grade, coefficients)
     val abel = 1.0 - cain
 
